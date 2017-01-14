@@ -27,7 +27,7 @@ int main()
 		sqlite3_close(db);
 		return(1);
 	}
-	rc = sqlite3_exec(db, "select * from testy", callback, 0, &zErrMsg);
+	rc = sqlite3_exec(db, "insert into testy(test) values('xxx')", callback, 0, &zErrMsg);
 	if (rc != SQLITE_OK) 
 	{
 		     fprintf(stderr, "SQL error: %s\n", zErrMsg);
