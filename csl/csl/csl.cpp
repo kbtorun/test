@@ -20,14 +20,14 @@ int main()
 	sqlite3 *db;
 	char *zErrMsg = 0;
 	int rc;
-	rc = sqlite3_open("test.db", &db);
+	rc = sqlite3_open("c:\\testy\\test\\baza.sqlite", &db);
 	if (rc) 
 	{
 		fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
 		sqlite3_close(db);
 		return(1);
 	}
-	rc = sqlite3_exec(db, "select 1 as aa", callback, 0, &zErrMsg);
+	rc = sqlite3_exec(db, "select * from testy", callback, 0, &zErrMsg);
 	if (rc != SQLITE_OK) 
 	{
 		     fprintf(stderr, "SQL error: %s\n", zErrMsg);
